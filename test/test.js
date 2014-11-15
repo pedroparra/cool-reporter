@@ -1,39 +1,29 @@
+'use strict';
+var assert = require('assert');
+var jshint = require('jshint/src/cli').run;
+var reporter = require('../reporter').reporter;
+
 describe('Cool reporter', function(){
 
-  describe('No errors', function(){
+  it('should be used by JSHint', function(){
 
-    describe('value_undefined', function(){
-      it('Return No problems', function(done){
-        done();
-      });
+    var ret = false;
+    var _log = process.stdout.write.bind(process.stdout);
+
+    process.stdout.write = function (str) {
+      _log(str);
+      if ( /'foo' is defined/ig.test(str || '') ) { ret = true; }
+    };
+
+    jshint({
+      args: ['fixture.js'],
+      reporter: reporter
     });
 
-    describe('undefined_value', function(){
-      it('Return No problems', function(done){
-        done();
-      });
-    });
+    process.stdout.write = _log;
 
-    describe('empty_value', function(){
-      it('Return No problems', function(done){
-        done();
-      });
-    });
-
-    describe('empty_array', function(){
-      it('Return No problems', function(done){
-        done();
-      });
-    });
-
-    describe('empty_object', function(){
-      it('Return No problems', function(done){
-        done();
-      });
-    });
+    assert(ret);
 
   });
-
-  // describe('Errors', function(){});
 
 });
