@@ -1,4 +1,5 @@
-# cool-reporter
+# cool-reporter [![Build Status](https://travis-ci.org/pedroparra/cool-reporter.svg?branch=master)](https://travis-ci.org/pedroparra/cool-reporter)
+
 > Cool reporter for [JSHint](https://github.com/jshint/jshint)
 
 ## Install
