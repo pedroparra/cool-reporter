@@ -1,0 +1,1 @@
+#Cool reporter for jshint.
