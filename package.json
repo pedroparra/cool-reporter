@@ -8,10 +8,23 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/pedroparra/cool-reporter.git"
   },
-  "author": "Pedro Jesús Parra Cantero",
-  "license": "ISC",
+  "author": {
+    "name": "Pedro Jesús Parra Cantero",
+    "email": "pedroparra.correo@gmail.com"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "keywords": [
+    "jshint",
+    "reporter",
+    "lint",
+    "validate",
+    "cool"
+  ],
   "devDependencies": {
     "grunt": "^0.4.5",
     "grunt-contrib-jshint": "^0.10.0",
