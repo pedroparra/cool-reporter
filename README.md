@@ -2,6 +2,8 @@
 
 > Cool reporter for [JSHint](https://github.com/jshint/jshint)
 
+![screenshot](screenshot.jpg)
+
 ## Install
 ```sh
 $ npm install --save-dev cool-reporter
