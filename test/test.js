@@ -3,6 +3,8 @@ var assert = require('assert');
 var jshint = require('jshint/src/cli').run;
 var reporter = require('../reporter').reporter;
 
+describe('cool-reporter', function () {
+
 it('should be used by JSHint', function(){
 
   var ret = false;
@@ -22,3 +24,7 @@ it('should be used by JSHint', function(){
   assert(ret);
 
 });
+
+});
+
+return true;
