@@ -26,5 +26,3 @@ it('should be used by JSHint', function(){
 });
 
 });
-
-return true;

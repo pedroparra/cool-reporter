@@ -2,10 +2,15 @@
   "name": "cool-reporter",
   "version": "0.1.4",
   "description": "Cool reporter for jshint",
+  "license": "MIT",
   "main": "index.js",
   "scripts": {
     "test": "mocha"
   },
+  "files": [
+    "index.js",
+    "reporter.js"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/pedroparra/cool-reporter.git"
@@ -15,7 +20,6 @@
     "email": "pedroparra.correo@gmail.com",
     "url": "https://github.com/pedroparra/cool-reporter.git"
   },
-  "license": "MIT",
   "engines": {
     "node": ">=0.10.0"
   },
