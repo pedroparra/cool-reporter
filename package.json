@@ -1,6 +1,6 @@
 {
   "name": "cool-reporter",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Cool reporter for jshint",
   "license": "MIT",
   "main": "index.js",
@@ -42,7 +42,7 @@
   },
   "dependencies": {
     "chalk": "^0.5.1",
-    "easy-table": "^0.3.0",
+    "cli-table": "^0.3.1",
     "log-symbols": "^1.0.1"
   }
 }

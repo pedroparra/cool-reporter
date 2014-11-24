@@ -1,7 +1,7 @@
 'use strict';
 
 var chalk = require('chalk');
-var Table = require('easy-table');
+var Table = require('cli-table');
 var logSymbols = require('log-symbols');
 
 function reporter(errors){
@@ -17,7 +17,14 @@ function reporter(errors){
     var total = errors.length;
     var errorCount = 0;
     var warningCount = 0;
-    var t = new Table();
+    var infotype = '';
+
+    var t = new Table({
+      head: [ 'File', 'Line','Col','Reason','Type' ],
+      style: { 'padding-left': 1 , 'padding-right': 1
+          , head: ['gray'], border: ['gray']
+      }
+    });
 
     errors.forEach(function (el) {
 
@@ -27,11 +34,19 @@ function reporter(errors){
 
       var isError = err.code && err.code[0] === 'E';
       if (isError) {
+
         errorCount++;
+        infotype = chalk.red;
         infocell.icon = logSymbols.error+' Error';
+
+
       } else {
+
         warningCount++;
+        infotype = chalk.yellow;
         infocell.icon = logSymbols.warning+' Warning';
+
+
       }
 
       if(! err.line){ err.line = '(unknown line)'; }
@@ -40,18 +55,18 @@ function reporter(errors){
       if(! err.evidence){ err.evidence = '(unknown problem)'; }
       if(! err.code){ err.code = '(unknown code)'; }
 
-
-      t.cell('File', file );
-      t.cell('Line', err.line);
-      t.cell('Col', err.character);
-      t.cell('Reason', err.reason);
-      t.cell('Type', infocell.icon);
-      t.newRow();
+      t.push([
+        infotype( file ),
+        infotype(  err.line ),
+        infotype( err.character ),
+        infotype( err.reason ),
+        infotype( infocell.icon )
+      ]);
 
     });
 
     habla = '\n' + t.toString();
-    habla += '\n' +(total > 1 ? 'Errors: ' : 'Error: ')+total+'\n';
+    habla += '\n' +(total > 1 ? ' Errors: ' : ' Error: ')+total+'\n';
 
   }
 
