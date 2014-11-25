@@ -1,6 +1,6 @@
 {
   "name": "cool-reporter",
-  "version": "0.1.5",
+  "version": "0.1.51",
   "description": "Cool reporter for jshint",
   "license": "MIT",
   "main": "index.js",

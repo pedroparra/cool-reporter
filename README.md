@@ -2,7 +2,7 @@
 
 > Cool reporter for [JSHint](https://github.com/jshint/jshint)
 
-![screenshot](screenshot.jpg)
+![screenshot](screenshot.png)
 
 ## Install
 ```sh
