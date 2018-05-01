@@ -42,8 +42,3 @@ grunt.initConfig({
 grunt.loadNpmTasks('grunt-contrib-jshint');
 grunt.registerTask('default', ['jshint']);
 ```
-
-
-## License
-
-MIT © Pedro Jesús Parra Cantero
